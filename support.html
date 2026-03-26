@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Echo — Support</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
+      margin: 0; padding: 40px 24px; line-height: 1.7; color: #e0e0e0;
+      background: #0a0a0a;
+      max-width: 720px; margin-left: auto; margin-right: auto;
+    }
+    h1 { font-size: 28px; margin-bottom: 4px; color: #fff; }
+    h2 { font-size: 18px; margin-top: 32px; color: #fff; border-bottom: 1px solid #222; padding-bottom: 6px; }
+    h3 { font-size: 16px; margin-top: 20px; color: #ddd; }
+    p, li { font-size: 15px; color: #bbb; }
+    .muted { color: #666; font-size: 13px; }
+    .zh { color: #777; font-size: 13px; margin-top: 2px; }
+    a { color: #6cb4ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .back { display: inline-block; margin-bottom: 24px; font-size: 14px; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-q { font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .faq-a { color: #bbb; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #e0e0e0; }
+  </style>
+</head>
+<body>
+  <a class="back" href="/">← Back to Echo</a>
+
+  <h1>Support</h1>
+  <p class="zh">帮助与支持</p>
+  <p>Having trouble with Echo? Check the FAQ below, or reach out to us directly.</p>
+  <p class="zh">遇到问题？请查看下方常见问题，或直接联系我们。</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <p class="zh">常见问题</p>
+
+  <div class="faq-item">
+    <div class="faq-q">Voice input isn't working</div>
+    <div class="faq-a">Make sure you've granted <strong>Microphone permission</strong> to Echo. On iOS, go to Settings → Echo → Microphone. On macOS, go to System Settings → Privacy & Security → Microphone.</div>
+    <p class="zh">确认已授予 Echo 麦克风权限。iOS: 设置 → Echo → 麦克风。macOS: 系统设置 → 隐私与安全 → 麦克风。</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Keyboard extension doesn't appear</div>
+    <div class="faq-a">On iOS, go to Settings → General → Keyboard → Keyboards → Add New Keyboard → select <strong>Echo</strong>. Then tap Echo and enable <strong>"Allow Full Access"</strong> (required for voice features).</div>
+    <p class="zh">iOS: 设置 → 通用 → 键盘 → 键盘 → 添加新键盘 → 选择 Echo，然后开启"允许完全访问"。</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Transcription results are empty or inaccurate</div>
+    <div class="faq-a">Check that your internet connection is stable — Echo uses cloud-based ASR engines for transcription. Also verify that your <strong>API keys</strong> are correctly configured in the app settings.</div>
+    <p class="zh">检查网络连接是否稳定，并确认 API Key 已在 App 设置中正确配置。</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I set up my API keys?</div>
+    <div class="faq-a">Echo uses a <strong>Bring Your Own Key (BYOK)</strong> model. You'll need API keys from providers like OpenAI, Deepgram, or Volcano Engine. Go to Echo Settings → API Keys to add them. All keys are stored securely in Apple Keychain.</div>
+    <p class="zh">Echo 采用自带密钥模式。在 Echo 设置 → API Keys 中添加你的密钥，所有密钥安全存储在 Apple Keychain 中。</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Does Echo work offline?</div>
+    <div class="faq-a">Echo requires an internet connection for cloud-based speech recognition and AI polish features. Basic app functionality (viewing history, adjusting settings) works offline.</div>
+    <p class="zh">Echo 的语音识别和 AI 润色功能需要网络连接。查看历史记录、调整设置等基础功能可离线使用。</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">What platforms does Echo support?</div>
+    <div class="faq-a">Echo is available on <strong>macOS</strong> and <strong>iOS</strong> (iPhone & iPad). Both versions are available on the App Store.</div>
+    <p class="zh">Echo 支持 macOS 和 iOS（iPhone & iPad），均可在 App Store 下载。</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">How do I cancel my Pro subscription?</div>
+    <div class="faq-a">Subscriptions are managed through Apple. On iOS: Settings → your name → Subscriptions. On macOS: App Store → your profile → Manage Subscriptions.</div>
+    <p class="zh">订阅通过 Apple 管理。iOS: 设置 → 你的名称 → 订阅。macOS: App Store → 你的头像 → 管理订阅。</p>
+  </div>
+
+  <h2>Still Need Help?</h2>
+  <p class="zh">还需要帮助？</p>
+  <p>Contact us at: <strong><a href="mailto:support@fashionflow.ai">support@fashionflow.ai</a></strong></p>
+  <p class="zh">请联系：support@fashionflow.ai</p>
+  <p>When reaching out, please include:</p>
+  <ul>
+    <li>Device model (e.g., iPhone 16, MacBook Air M3)</li>
+    <li>OS version (e.g., iOS 19.3, macOS 16.2)</li>
+    <li>A description of the issue</li>
+    <li>Screenshots or screen recordings if possible</li>
+  </ul>
+  <p class="zh">请在邮件中提供：设备型号、系统版本、问题描述与截图。</p>
+
+  <p class="muted" style="margin-top: 40px;">© 2026 Xiang Gui. All rights reserved.</p>
+</body>
+</html>
