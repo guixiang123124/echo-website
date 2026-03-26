@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo Hero Prototype — New Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: oklch(0.07 0.01 264);
+      --bg2: oklch(0.10 0.015 264);
+      --primary: oklch(0.62 0.20 264);
+      --primary-glow: oklch(0.62 0.20 264 / 0.15);
+      --accent: oklch(0.70 0.18 300);
+      --text: oklch(0.97 0.005 264);
+      --text-2: oklch(0.65 0.02 264);
+      --text-3: oklch(0.45 0.02 264);
+      --border: oklch(1 0 0 / 0.08);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+      background: oklch(0.07 0.01 264 / 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-size: 1.25rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.875rem; color: var(--text-2); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      padding: 0.5rem 1.25rem;
+      background: var(--primary);
+      color: white !important;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 80px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient glow */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, oklch(0.62 0.20 264 / 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, oklch(0.70 0.18 300 / 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Badge */
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.375rem 1rem;
+      background: oklch(0.62 0.20 264 / 0.1);
+      border: 1px solid oklch(0.62 0.20 264 / 0.3);
+      border-radius: 100px;
+      font-size: 0.8125rem; font-weight: 500;
+      color: oklch(0.80 0.15 264);
+      margin-bottom: 2rem;
+      position: relative; z-index: 1;
+    }
+    .badge-dot {
+      width: 6px; height: 6px;
+      background: oklch(0.62 0.20 264);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    /* Headline */
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      position: relative; z-index: 1;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line1 { display: block; color: var(--text); }
+    .hero-title .line2 {
+      display: block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* Subtitle */
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-2);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      position: relative; z-index: 1;
+      font-weight: 400;
+    }
+
+    /* CTA */
+    .hero-cta {
+      display: flex; gap: 1rem; align-items: center;
+      flex-wrap: wrap; justify-content: center;
+      margin-bottom: 4rem;
+      position: relative; z-index: 1;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: var(--primary);
+      color: white; text-decoration: none;
+      border-radius: 12px;
+      font-size: 1rem; font-weight: 700;
+      box-shadow: 0 0 40px oklch(0.62 0.20 264 / 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: -0.01em;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 60px oklch(0.62 0.20 264 / 0.5);
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      background: transparent;
+      color: var(--text-2); text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem; font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: oklch(0.62 0.20 264 / 0.5); color: var(--text); }
+
+    /* Product preview */
+    .hero-preview {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 680px;
+    }
+    .preview-frame {
+      background: oklch(0.12 0.02 264);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 1px oklch(1 0 0 / 0.05),
+        0 40px 80px oklch(0 0 0 / 0.6),
+        0 0 80px oklch(0.62 0.20 264 / 0.1);
+    }
+    .preview-bar {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: oklch(0.10 0.015 264);
+    }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .preview-content {
+      padding: 2rem;
+      min-height: 200px;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+
+    /* Streaming text animation */
+    .stream-demo {
+      display: flex; flex-direction: column; gap: 0.75rem;
+      text-align: left;
+    }
+    .stream-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+      color: var(--text-3); text-transform: uppercase;
+    }
+    .stream-text {
+      font-size: 1.125rem; font-weight: 500;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .stream-cursor {
+      display: inline-block;
+      width: 2px; height: 1.2em;
+      background: var(--primary);
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .waveform {
+      display: flex; align-items: center; gap: 3px;
+      height: 40px;
+    }
+    .bar {
+      width: 4px; border-radius: 2px;
+      background: var(--primary);
+      animation: wave 1.2s ease-in-out infinite;
+    }
+    .bar:nth-child(2) { animation-delay: 0.1s; }
+    .bar:nth-child(3) { animation-delay: 0.2s; }
+    .bar:nth-child(4) { animation-delay: 0.3s; }
+    .bar:nth-child(5) { animation-delay: 0.4s; }
+    .bar:nth-child(6) { animation-delay: 0.3s; }
+    .bar:nth-child(7) { animation-delay: 0.2s; }
+    .bar:nth-child(8) { animation-delay: 0.1s; }
+    .bar:nth-child(9) { animation-delay: 0s; }
+    @keyframes wave {
+      0%, 100% { height: 8px; opacity: 0.4; }
+      50% { height: 32px; opacity: 1; }
+    }
+
+    /* ── STATS ── */
+    .stats {
+      display: flex; justify-content: center; gap: 3rem;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: oklch(0.09 0.01 264);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 2rem; font-weight: 900; letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: 0.8125rem; color: var(--text-3); margin-top: 0.25rem; }
+
+    /* ── FEATURES ── */
+    .features {
+      max-width: 1100px; margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+    .features-header { text-align: center; margin-bottom: 4rem; }
+    .section-eyebrow {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: oklch(0.70 0.15 264);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900; letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+    .section-sub {
+      font-size: 1.125rem; color: var(--text-2);
+      max-width: 480px; margin: 1rem auto 0; line-height: 1.6;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .feature-card {
+      padding: 2rem;
+      background: oklch(0.11 0.015 264);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      transition: border-color 0.3s, transform 0.3s, background 0.3s;
+    }
+    .feature-card:hover {
+      border-color: oklch(0.62 0.20 264 / 0.4);
+      transform: translateY(-4px);
+      background: oklch(0.13 0.02 264);
+    }
+    .feature-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, oklch(0.13 0.04 264) 0%, oklch(0.12 0.03 300) 100%);
+      border-color: oklch(0.62 0.20 264 / 0.2);
+    }
+    .feature-icon {
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: oklch(0.62 0.20 264 / 0.1);
+      border: 1px solid oklch(0.62 0.20 264 / 0.2);
+      border-radius: 14px;
+      color: oklch(0.75 0.15 264);
+      margin-bottom: 1.5rem;
+    }
+    .feature-icon svg { width: 22px; height: 22px; }
+    .feature-title {
+      font-size: 1.125rem; font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 0.5rem;
+    }
+    .feature-desc {
+      font-size: 0.9375rem; color: var(--text-2); line-height: 1.6;
+    }
+    .feature-metric {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.25rem 0.75rem;
+      background: oklch(0.62 0.20 264 / 0.1);
+      border: 1px solid oklch(0.62 0.20 264 / 0.2);
+      border-radius: 100px;
+      font-size: 0.75rem; font-weight: 700;
+      color: oklch(0.75 0.15 264);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 768px) {
+      .feature-grid { grid-template-columns: 1fr; }
+      .feature-card.featured { grid-column: span 1; }
+      .stats { gap: 2rem; flex-wrap: wrap; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Echo</div>
+    <div class="nav-links">
+      <a href="#">功能</a>
+      <a href="#">定价</a>
+      <a href="#" class="nav-cta">下载</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      v1.1 · iOS & macOS 双平台上线
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line1">以思维的速度</span>
+      <span class="line2">开口</span>
+    </h1>
+
+    <p class="hero-sub">
+      Echo 将你的声音实时转化为干净、可编辑的文字。<br>
+      不只是转录——是理解。
+    </p>
+
+    <div class="hero-cta">
+      <a href="#" class="btn-primary">
+        <i data-lucide="download" style="width:18px;height:18px"></i>
+        下载 macOS 版本
+      </a>
+      <a href="#" class="btn-secondary">
+        <i data-lucide="smartphone" style="width:16px;height:16px"></i>
+        App Store
+      </a>
+    </div>
+
+    <!-- Product Preview -->
+    <div class="hero-preview">
+      <div class="preview-frame">
+        <div class="preview-bar">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+        </div>
+        <div class="preview-content">
+          <div class="stream-demo">
+            <div class="stream-label">实时转录</div>
+            <div class="waveform">
+              <div class="bar" style="animation-delay:0s"></div>
+              <div class="bar" style="animation-delay:0.1s"></div>
+              <div class="bar" style="animation-delay:0.2s"></div>
+              <div class="bar" style="animation-delay:0.3s"></div>
+              <div class="bar" style="animation-delay:0.4s"></div>
+              <div class="bar" style="animation-delay:0.35s"></div>
+              <div class="bar" style="animation-delay:0.25s"></div>
+              <div class="bar" style="animation-delay:0.15s"></div>
+              <div class="bar" style="animation-delay:0.05s"></div>
+            </div>
+            <div class="stream-text">
+              今天下午三点开会，提醒一下大家准备好季度汇报的材料，重点关注 Q1 的增长数据<span class="stream-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">5×</div>
+      <div class="stat-label">比打字快 5 倍</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">&lt;500ms</div>
+      <div class="stat-label">首字延迟</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">96%</div>
+      <div class="stat-label">学习后准确率</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">豆包 2.0</div>
+      <div class="stat-label">顶级 ASR 引擎</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="features-header">
+      <div class="section-eyebrow">核心技术</div>
+      <h2 class="section-title">为什么选择 Echo？</h2>
+      <p class="section-sub">三项核心技术，让语音输入从「能用」变成「好用」</p>
+    </div>
+
+    <div class="feature-grid">
+      <!-- Featured card -->
+      <div class="feature-card featured">
+        <div class="feature-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="feature-title">实时流式转录</div>
+        <div class="feature-desc">开口即出字。字节级流式传输，边说边看，所见即所得。国内顶级 ASR 引擎豆包 2.0，中英混合识别精准流畅。</div>
+        <span class="feature-metric">首字延迟 &lt;500ms</span>
+      </div>
+
+      <!-- Regular cards -->
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i data-lucide="sparkles"></i>
+        </div>
+        <div class="feature-title">语义理解</div>
+        <div class="feature-desc">不是你说的字，是你想说的意思。自动修正同音字、理解上下文语境。</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i data-lucide="pen-line"></i>
+        </div>
+        <div class="feature-title">AI 润色</div>
+        <div class="feature-desc">纯转录、轻整理、深度编辑——按需选择精修程度。</div>
+        <span class="feature-metric">OpenAI · Claude · 豆包</span>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i data-lucide="keyboard"></i>
+        </div>
+        <div class="feature-title">系统键盘集成</div>
+        <div class="feature-desc">任何 App 内直接使用，无需切换，无需复制粘贴。</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div class="feature-title">隐私优先</div>
+        <div class="feature-desc">语音处理后即销毁。无追踪，无数据收集，你的对话只关你自己的事。</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    lucide.createIcons({ attrs: { 'stroke-width': '1.75' } });
+  </script>
+</body>
+</html>
