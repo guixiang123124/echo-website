@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Echo — Speak at the Speed of Thought</title>
   <meta name="description" content="Echo turns your voice into clean, editable text in real time. Fast first token, stable live output, accurate final text.">
+  <meta property="og:title" content="Echo — Speak at the Speed of Thought">
+  <meta property="og:description" content="Echo turns your voice into clean, editable text in real time. Fast first token, stable live output, accurate final text.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.echovoice.me/en.html">
+  <meta property="og:image" content="https://www.echovoice.me/assets/og-image.png">
+  <!-- TODO: Create /assets/og-image.png (1200x630 recommended) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Echo — Speak at the Speed of Thought">
+  <meta name="twitter:description" content="Echo turns your voice into clean, editable text in real time. AI-powered voice keyboard for iPhone and Mac.">
+  <meta name="twitter:image" content="https://www.echovoice.me/assets/og-image.png">
+  <meta name="robots" content="index, follow">
+  <meta name="apple-itunes-app" content="app-id=6758864952">
+  <link rel="canonical" href="https://www.echovoice.me/en.html">
+  <link rel="alternate" hreflang="en" href="https://www.echovoice.me/en.html">
+  <link rel="alternate" hreflang="zh" href="https://www.echovoice.me/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -664,7 +679,69 @@
       .features-grid { grid-template-columns: 1fr; }
       .team-grid { flex-direction: column; align-items: center; }
     }
+    .faq-section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+    .faq-section h2 { font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 48px; }
+    .faq-item { margin-bottom: 24px; padding: 24px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; }
+    .faq-item h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+    .faq-item p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Echo: AI Voice to Text Keyboard",
+    "operatingSystem": "iOS, macOS",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Turn your voice into clean, editable text with AI. Real-time streaming transcription with 4-layer AI polish.",
+    "url": "https://www.echovoice.me/",
+    "downloadUrl": "https://apps.apple.com/app/id6758864952"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Echo voice keyboard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Echo is an AI-powered voice-to-text keyboard for iPhone and Mac. It converts speech into clean, editable text in real-time using 4-layer AI processing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Echo different from Apple Dictation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Echo offers real-time streaming (~180ms first word), learns your vocabulary over time, and has 4 AI polish levels from basic correction to full rewrite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Echo free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Echo is free to download and use. Premium features are available with Echo Pro subscription."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Echo work in any app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Echo installs as a keyboard extension so you can use it in any app on iPhone."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="bg-mesh"></div>
@@ -913,6 +990,26 @@
         <span class="platform-status coming">In Development</span>
         <button class="platform-btn disabled" disabled>Join Waitlist</button>
       </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>What is Echo voice keyboard?</h3>
+      <p>Echo is an AI-powered voice-to-text keyboard for iPhone and Mac. It converts speech into clean, editable text in real-time using 4-layer AI processing.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How is Echo different from Apple Dictation?</h3>
+      <p>Echo offers real-time streaming (~180ms first word), learns your vocabulary over time, and has 4 AI polish levels from basic correction to full rewrite.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is Echo free?</h3>
+      <p>Echo is free to download and use. Premium features are available with Echo Pro subscription.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Does Echo work in any app?</h3>
+      <p>Yes, Echo installs as a keyboard extension so you can use it in any app on iPhone.</p>
     </div>
   </section>
 
