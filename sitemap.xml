@@ -65,4 +65,16 @@
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
+  <url>
+    <loc>https://www.echovoice.me/blog/building-app-with-ai-partner</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.echovoice.me/blog/chinese-english-voice-input</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-03</lastmod>
+  </url>
 </urlset>

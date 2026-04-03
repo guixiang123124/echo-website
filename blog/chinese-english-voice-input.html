@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中英混合语音输入：为什么大多数工具做不好，Echo 怎么解决 | Echo Blog</title>
+  <meta name="description" content="中英文混合输入是语音转文字最难的场景。代码切换、同音字、标点问题——Echo 的四层 AI 处理方案如何解决这些痛点。">
+  <meta name="keywords" content="中英混合语音输入, 语音转文字, 中文语音输入, code-switching, 语音键盘, Echo voice keyboard, 中英文混合识别">
+  <meta property="og:title" content="中英混合语音输入：Echo 的解决方案">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.echovoice.me/blog/chinese-english-voice-input">
+  <link rel="canonical" href="https://www.echovoice.me/blog/chinese-english-voice-input">
+  <link rel="alternate" hreflang="zh" href="https://www.echovoice.me/blog/chinese-english-voice-input">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"中英混合语音输入：为什么大多数工具做不好","author":{"@type":"Person","name":"Sean G"},"datePublished":"2026-04-03","publisher":{"@type":"Organization","name":"Echo Voice"},"inLanguage":"zh-CN"}
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:#0a0a0a;color:#d4d4d4;line-height:2}.container{max-width:720px;margin:0 auto;padding:40px 20px}header a{color:#888;text-decoration:none;font-size:14px}h1{font-size:28px;color:#fff;margin:20px 0 16px;line-height:1.4}.meta{color:#666;font-size:14px;margin-bottom:40px}h2{font-size:22px;color:#fff;margin:36px 0 16px}p{margin-bottom:20px;font-size:17px}.highlight{background:#1a1a2e;border-left:4px solid #6366f1;padding:20px;border-radius:8px;margin:24px 0}.example{background:#141414;border:1px solid #333;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:15px}.example .wrong{color:#ef4444;text-decoration:line-through}.example .right{color:#22c55e}ul{margin:16px 0 20px 24px}li{margin-bottom:8px}.cta{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;text-decoration:none;padding:16px 32px;border-radius:12px;display:inline-block;font-weight:600;margin:24px 0}footer{text-align:center;margin-top:60px;color:#666;font-size:14px;border-top:1px solid #222;padding-top:24px}footer a{color:#888;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header><a href="/">← Echo</a> · <a href="/blog/">Blog</a></header>
+
+    <h1>中英混合语音输入：为什么大多数工具做不好，Echo 是怎么解决的</h1>
+    <p class="meta">Sean G · 2026 年 4 月 3 日 · 阅读约 5 分钟</p>
+
+    <p>如果你在中文环境中工作，一定经历过这个场景：你在说中文，中间夹了一个英文单词，语音转文字工具把它翻译成了中文。</p>
+
+    <div class="example">
+      <p>你说：「我觉得这个 feature 做得不错」</p>
+      <p>大多数工具输出：「我觉得这个<span class="wrong">功能</span>做得不错」</p>
+      <p>你想要的：「我觉得这个<span class="right">feature</span>做得不错」</p>
+    </div>
+
+    <p>这就是「代码切换」（code-switching）问题——在一段话中混合使用两种语言。对人类来说毫不费力，但对 ASR（自动语音识别）系统来说是巨大的挑战。</p>
+
+    <h2>为什么这么难？</h2>
+
+    <ul>
+      <li><strong>语音模型的训练数据</strong>：大多数 ASR 模型是单语言训练的。中文模型倾向于把所有声音都解码为中文字。</li>
+      <li><strong>音素重叠</strong>：「feature」的发音用中文可以对应好几个词（飞车、肥处……），模型没有足够的上下文判断。</li>
+      <li><strong>标点混乱</strong>：中英混合时，中文该用全角标点（。，？），英文该用半角（.,,?），大多数工具直接搞混。</li>
+      <li><strong>翻译冲动</strong>：有些 AI 润色工具会"好心"地把英文翻译成中文，反而不是你要的。</li>
+    </ul>
+
+    <h2>Echo 的四层解决方案</h2>
+
+    <h3>第一层：ASR 引擎选择</h3>
+    <p>Echo 默认使用火山引擎（豆包）ASR 2.0，这是目前中英混合识别最好的引擎之一。它在训练时就考虑了 code-switching 场景。</p>
+
+    <h3>第二层：AI 纠错</h3>
+    <p>转录完成后，AI 修正层会检查同音字错误。「他说要去开个 meeting」不会被改成「他说要去开个米汀」。</p>
+
+    <h3>第三层：Code-Switching 保护</h3>
+    <p>这是最关键的一层。Echo 的 AI 润色 prompt 明确要求：<strong>「preserve English words in Chinese-English code-switching, do NOT translate」</strong>。这意味着：</p>
+
+    <div class="example">
+      <p>输入：「今天 deploy 了新的 version」</p>
+      <p>输出：「今天 deploy 了新的 version。」✅</p>
+      <p>不会变成：「今天部署了新的版本。」❌</p>
+    </div>
+
+    <h3>第四层：智能标点</h3>
+    <p>Echo 的键盘自动处理中英标点切换。中文语境下用全角标点，英文单词前后自动加空格。</p>
+
+    <h2>实际使用场景</h2>
+
+    <ul>
+      <li><strong>科技行业工作者</strong>：「我们需要优化一下 latency，目前 P99 大概 200ms」</li>
+      <li><strong>留学生/海归</strong>：「那个 professor 说 deadline 是下周五」</li>
+      <li><strong>程序员</strong>：「这个 bug 是因为 race condition，我加了一个 lock」</li>
+      <li><strong>商务人士</strong>：「跟 client 的 call 定在明天 3pm PST」</li>
+    </ul>
+
+    <p>这些都是日常对话中的真实表达。Echo 保留你说话的原始意图，不会过度翻译。</p>
+
+    <h2>试试看</h2>
+
+    <p>Echo 免费使用，不需要注册。iOS 和 macOS 双平台。</p>
+
+    <a href="https://apps.apple.com/app/id6758864952" class="cta">免费下载 Echo →</a>
+
+    <footer>
+      <a href="/">Echo</a> · <a href="/blog/">更多文章</a> · <a href="https://apps.apple.com/app/id6758864952">App Store</a>
+      <br><br>© 2026 Echo Voice
+    </footer>
+  </div>
+</body>
+</html>

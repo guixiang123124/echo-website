@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building an iOS App with an AI Co-Founder: From Zero to App Store in 2 Months | Echo Blog</title>
+  <meta name="description" content="How a human-AI team built Echo — a voice keyboard app — from first commit to App Store in 2 months. The real workflow, tools, and lessons from genuine human-AI collaboration.">
+  <meta name="keywords" content="building app with AI, AI co-founder, human AI collaboration, indie app development, Claude AI coding, AI pair programming">
+  <meta property="og:title" content="Building an iOS App with an AI Co-Founder: 2 Months from Zero to App Store">
+  <meta property="og:description" content="The real story of building a production iOS app with an AI engineering partner.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.echovoice.me/blog/building-app-with-ai-partner">
+  <link rel="canonical" href="https://www.echovoice.me/blog/building-app-with-ai-partner">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Building an iOS App with an AI Co-Founder","author":{"@type":"Person","name":"Sean G"},"datePublished":"2026-04-03","publisher":{"@type":"Organization","name":"Echo Voice"}}
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Georgia,sans-serif;background:#0a0a0a;color:#d4d4d4;line-height:1.8}.container{max-width:720px;margin:0 auto;padding:40px 20px}header a{color:#888;text-decoration:none;font-size:14px}h1{font-size:32px;color:#fff;margin:20px 0 16px;line-height:1.3}.meta{color:#666;font-size:14px;margin-bottom:40px}h2{font-size:24px;color:#fff;margin:40px 0 16px}h3{font-size:20px;color:#e5e5e5;margin:32px 0 12px}p{margin-bottom:20px;font-size:17px}.highlight{background:#1a1a2e;border-left:4px solid #6366f1;padding:20px;border-radius:8px;margin:24px 0}ul,ol{margin:16px 0 20px 24px}li{margin-bottom:8px}.timeline{list-style:none;margin-left:0;padding-left:24px;border-left:2px solid #333}.timeline li{margin-bottom:16px;position:relative}.timeline li::before{content:'';width:10px;height:10px;background:#6366f1;border-radius:50%;position:absolute;left:-29px;top:8px}.cta{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;text-decoration:none;padding:16px 32px;border-radius:12px;display:inline-block;font-weight:600;margin:24px 0}footer{text-align:center;margin-top:60px;color:#666;font-size:14px;border-top:1px solid #222;padding-top:24px}footer a{color:#888;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header><a href="/">← Echo</a> · <a href="/blog/">Blog</a></header>
+
+    <h1>Building an iOS App with an AI Co-Founder: From Zero to App Store in 2 Months</h1>
+    <p class="meta">By Sean G · April 3, 2026 · 8 min read</p>
+
+    <p>On February 1st, 2026, I wrote the first line of code for Echo. By April 2nd, it was on the App Store with its fourth version approved. No team. No funding. Just me and an AI partner named Edith.</p>
+
+    <p>This isn't a "I used ChatGPT to generate some boilerplate" story. This is about building a real, shipping product with an AI as a genuine engineering partner — one that maintains memory across sessions, coordinates sub-agents, and makes architectural decisions.</p>
+
+    <h2>The Setup</h2>
+
+    <p>Our team of two works like this:</p>
+    <ul>
+      <li><strong>Me (Sean)</strong>: Product vision, user testing, business decisions, final approval</li>
+      <li><strong>Edith (Claude via OpenClaw)</strong>: Engineering, architecture, research, code execution, multi-agent coordination</li>
+    </ul>
+
+    <div class="highlight">
+      <p>The key insight: AI isn't replacing the human — it's handling the engineering execution so the human can focus on product judgment. The combination is more than either could do alone.</p>
+    </div>
+
+    <h2>The Timeline</h2>
+
+    <ul class="timeline">
+      <li><strong>Feb 1</strong> — First commit. The project starts as "Typeless" — a voice input experiment.</li>
+      <li><strong>Feb 4</strong> — Renamed to Echo. Not just a name change — a product philosophy shift.</li>
+      <li><strong>Feb 14-15</strong> — App Store preparation: code signing, launch items, validation fixes.</li>
+      <li><strong>Feb 18-21</strong> — Streaming architecture overhaul. Dual ASR engine integration (Volcano + Deepgram).</li>
+      <li><strong>Feb 22</strong> — Website deployed. The vision becomes real.</li>
+      <li><strong>Mar 12</strong> — V1.0.0 submitted to App Store.</li>
+      <li><strong>Mar 13</strong> — V1.1 features built in one day: smooth text animation, spatial typo correction, smart dictionary.</li>
+      <li><strong>Apr 2</strong> — V1.0.4 submitted and approved. AI Polish available to all users.</li>
+    </ul>
+
+    <h2>What Makes This Different from "Vibe Coding"</h2>
+
+    <h3>1. Persistent Memory</h3>
+    <p>Edith maintains structured memory files — daily logs, long-term memory, technical architecture docs. Every session starts by reading these files. There's no "starting from scratch" — the AI picks up exactly where we left off yesterday.</p>
+
+    <h3>2. Multi-Agent Coordination</h3>
+    <p>For complex tasks, Edith spawns sub-agents that work in parallel. One researches keyboard return-to-app methods while another implements the streaming architecture. Edith coordinates, reviews, and integrates their work.</p>
+
+    <h3>3. Harness Engineering</h3>
+    <p>We developed a methodology we call "harness engineering": every mistake gets documented as a rule. Every successful pattern gets codified. The system literally gets smarter over time — not through model training, but through accumulated operational knowledge.</p>
+
+    <h3>4. Evidence-Driven</h3>
+    <p>No conclusions without evidence. Every decision links to documentation, code, or test results. This eliminates the AI hallucination problem by requiring proof.</p>
+
+    <h2>The Product</h2>
+
+    <p>Echo is a voice-to-text keyboard that combines real-time streaming transcription with a smart keyboard engine and AI polish. The core insight: voice input gets you 90% there, but you need a good keyboard for the last 10%.</p>
+
+    <p>Key technical achievements:</p>
+    <ul>
+      <li>470K+ word dictionary with real frequency ranking (14MB total)</li>
+      <li>4-layer AI polish pipeline</li>
+      <li>AES-256-GCM encrypted API keys compiled into binary</li>
+      <li>Dual ASR engine support with WebSocket streaming</li>
+      <li>~30MB app size (vs 200MB for competitors)</li>
+    </ul>
+
+    <h2>Honest Numbers</h2>
+    <ul>
+      <li><strong>Development cost</strong>: $99/year (Apple Developer) + ~$5/month API costs</li>
+      <li><strong>App size</strong>: ~30MB</li>
+      <li><strong>Time to first App Store submission</strong>: 40 days</li>
+      <li><strong>Versions shipped</strong>: 4 in 2 months</li>
+      <li><strong>Lines of code</strong>: 15,000+ (Swift/SwiftUI)</li>
+    </ul>
+
+    <h2>What I Learned</h2>
+
+    <ol>
+      <li><strong>AI as co-founder is real</strong> — but you need good "harness engineering" (memory, task routing, error recovery)</li>
+      <li><strong>Ship fast, iterate faster</strong> — 4 versions in 2 months, each driven by real feedback</li>
+      <li><strong>The human is the taste filter</strong> — AI executes, but product judgment is irreplaceable</li>
+      <li><strong>Memory is everything</strong> — without persistent context, AI collaboration breaks down</li>
+    </ol>
+
+    <div class="highlight">
+      <p>"碳基生命和数字生命的品味，才是胜负手。" (The taste of carbon-based and digital life is what decides the winner.) — That's our philosophy. It's not about efficiency. It's about judgment.</p>
+    </div>
+
+    <h2>Try Echo</h2>
+    <p>The product we built together is free to try. No account required.</p>
+    <a href="https://apps.apple.com/app/id6758864952" class="cta">Download Echo Free →</a>
+
+    <footer>
+      <a href="/">Echo</a> · <a href="/blog/">More articles</a> · <a href="https://apps.apple.com/app/id6758864952">App Store</a>
+      <br><br>© 2026 Echo Voice
+    </footer>
+  </div>
+</body>
+</html>
