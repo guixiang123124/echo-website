@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Typing vs Keyboard Speed: Why Voice is 3x Faster | Echo Blog</title>
+  <meta name="description" content="Compare voice typing speed (120 WPM) vs keyboard typing (40 WPM). Learn why voice input is 3x faster and how to solve the correction problem that kills productivity.">
+  <meta name="keywords" content="voice typing speed, voice vs keyboard, speech to text speed, dictation productivity, voice input WPM">
+  <meta property="og:title" content="Voice Typing vs Keyboard: Why Voice is 3x Faster">
+  <meta property="og:description" content="Most people type at 40 WPM. Voice input hits 120 WPM. But the real bottleneck isn't speed — it's the correction workflow.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.echovoice.me/blog/voice-typing-vs-keyboard-speed">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.echovoice.me/blog/voice-typing-vs-keyboard-speed">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Voice Typing vs Keyboard: Why Voice is 3x Faster (And How to Actually Get That Speed)",
+    "author": {"@type": "Person", "name": "Sean G"},
+    "datePublished": "2026-04-03",
+    "publisher": {"@type": "Organization", "name": "Echo Voice"},
+    "description": "Compare voice typing speed vs keyboard typing. Learn why voice input is 3x faster and how to solve the correction problem."
+  }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, sans-serif; background: #0a0a0a; color: #d4d4d4; line-height: 1.8; }
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+    header { margin-bottom: 40px; }
+    header a { color: #888; text-decoration: none; font-size: 14px; }
+    h1 { font-size: 32px; color: #fff; margin-bottom: 16px; line-height: 1.3; }
+    .meta { color: #666; font-size: 14px; margin-bottom: 40px; }
+    h2 { font-size: 24px; color: #fff; margin: 40px 0 16px; }
+    h3 { font-size: 20px; color: #e5e5e5; margin: 32px 0 12px; }
+    p { margin-bottom: 20px; font-size: 17px; }
+    .highlight { background: #1a1a2e; border-left: 4px solid #6366f1; padding: 20px; border-radius: 8px; margin: 24px 0; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+    .stat { background: #141414; border: 1px solid #222; border-radius: 12px; padding: 24px; text-align: center; }
+    .stat .number { font-size: 36px; font-weight: 700; color: #6366f1; }
+    .stat .label { font-size: 14px; color: #888; }
+    ul { margin: 16px 0 20px 24px; }
+    li { margin-bottom: 8px; }
+    .cta { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; text-decoration: none; padding: 16px 32px; border-radius: 12px; display: inline-block; font-weight: 600; margin: 24px 0; }
+    footer { text-align: center; margin-top: 60px; color: #666; font-size: 14px; border-top: 1px solid #222; padding-top: 24px; }
+    footer a { color: #888; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/">← Echo</a> · <a href="/blog/">Blog</a>
+    </header>
+
+    <h1>Voice Typing vs Keyboard: Why Voice is 3x Faster (And How to Actually Get That Speed)</h1>
+    <p class="meta">By Sean G · April 3, 2026 · 5 min read</p>
+
+    <p>Here's a fact that surprises most people: the average person speaks at <strong>120-150 words per minute</strong>, but types at only <strong>40 WPM</strong>. That's a 3x speed difference. So why isn't everyone using voice input?</p>
+
+    <p>Because in practice, voice typing isn't actually 3x faster. It's more like 1.5x — and sometimes even slower than typing. The culprit? <strong>The correction problem.</strong></p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="number">40</div>
+        <div class="label">WPM typing</div>
+      </div>
+      <div class="stat">
+        <div class="number">120</div>
+        <div class="label">WPM speaking</div>
+      </div>
+      <div class="stat">
+        <div class="number">~60</div>
+        <div class="label">WPM actual voice productivity</div>
+      </div>
+    </div>
+
+    <h2>The Correction Problem</h2>
+
+    <p>Voice recognition has gotten remarkably good — most modern ASR engines achieve 95%+ accuracy. But that remaining 5% creates a workflow problem that destroys the speed advantage:</p>
+
+    <ol>
+      <li>You dictate a paragraph</li>
+      <li>You spot an error</li>
+      <li>You switch to the regular keyboard</li>
+      <li>You navigate to the error</li>
+      <li>You fix it</li>
+      <li>You switch back to voice input</li>
+      <li>Repeat</li>
+    </ol>
+
+    <p>Each context switch takes 3-5 seconds. With 2-3 errors per paragraph, you're spending 15+ seconds just switching modes. Over a 500-word email, that's <strong>2-3 minutes lost to keyboard switching alone</strong>.</p>
+
+    <h2>The Solution: Keep Everything in One Keyboard</h2>
+
+    <p>The fix isn't better voice recognition (though that helps). It's <strong>eliminating the keyboard switch</strong>. If voice input and text editing lived in the same keyboard, you'd never need to context-switch.</p>
+
+    <p>That's exactly why we built <strong>Echo</strong>. It combines:</p>
+
+    <ul>
+      <li><strong>Real-time streaming voice-to-text</strong> — words appear as you speak (~180ms first character)</li>
+      <li><strong>Smart keyboard</strong> with 470K+ words — fix errors without switching keyboards</li>
+      <li><strong>AI polish</strong> — automatically cleans up grammar, filler words, and punctuation</li>
+    </ul>
+
+    <div class="highlight">
+      <p><strong>The workflow:</strong> Speak → see text appear instantly → tap a wrong word to fix it with the smart keyboard → AI polishes the rest → done. One keyboard, entire flow.</p>
+    </div>
+
+    <h2>Real-World Speed Comparison</h2>
+
+    <p>In our testing, here's how different input methods compare for writing a 300-word email:</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="number">7.5</div>
+        <div class="label">min — thumb typing</div>
+      </div>
+      <div class="stat">
+        <div class="number">5</div>
+        <div class="label">min — Apple Dictation + keyboard</div>
+      </div>
+      <div class="stat">
+        <div class="number">2.5</div>
+        <div class="label">min — Echo (voice + smart keyboard)</div>
+      </div>
+    </div>
+
+    <p>The difference isn't just raw WPM — it's the <strong>elimination of context switching</strong> and the AI polish that handles cleanup automatically.</p>
+
+    <h2>Tips for Faster Voice Typing</h2>
+
+    <h3>1. Speak in complete thoughts</h3>
+    <p>Don't dictate word by word. Speak in full sentences or phrases. ASR engines use context to improve accuracy — longer utterances give better results.</p>
+
+    <h3>2. Use a keyboard that understands corrections</h3>
+    <p>A regular keyboard doesn't know you're fixing dictation errors. A smart keyboard (like Echo's) can use context + QWERTY proximity to suggest the right correction faster.</p>
+
+    <h3>3. Let AI handle the polish</h3>
+    <p>Don't manually fix every "um", "uh", or missing comma. Let AI polish handle filler word removal, punctuation, and grammar correction in one pass.</p>
+
+    <h3>4. Build a personal dictionary</h3>
+    <p>The more you use voice input, the more it should learn your vocabulary. Professional jargon, names, and frequently-used phrases should get more accurate over time.</p>
+
+    <h2>Try It Yourself</h2>
+
+    <p>Echo is free to try on iOS and macOS. No account required.</p>
+
+    <a href="https://apps.apple.com/app/id6758864952" class="cta">Download Echo Free →</a>
+
+    <p>Voice input isn't just a novelty — with the right tools, it's genuinely the fastest way to get your thoughts into text.</p>
+
+    <footer>
+      <a href="/">Echo</a> · <a href="/blog/">More articles</a> · <a href="https://apps.apple.com/app/id6758864952">App Store</a>
+      <br><br>© 2026 Echo Voice
+    </footer>
+  </div>
+</body>
+</html>

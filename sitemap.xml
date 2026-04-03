@@ -7,6 +7,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.echovoice.me/en.html" />
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+    <lastmod>2026-04-03</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/en.html</loc>
@@ -14,15 +15,34 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.echovoice.me/" />
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://www.echovoice.me/features.html</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-03</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/download.html</loc>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.echovoice.me/blog/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.echovoice.me/blog/voice-typing-vs-keyboard-speed</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.echovoice.me/blog/best-voice-to-text-apps-2026</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-03</lastmod>
+  </url>
+  <url>
+    <loc>https://www.echovoice.me/features.html</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
