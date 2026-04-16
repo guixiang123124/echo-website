@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seed-ASR 2.0 vs Whisper: Which Is Better for Voice Input? | Echo Blog</title>
+  <meta name="description" content="Whisper is famous but is it still the best for multilingual voice input? We tested Seed-ASR 2.0 vs Whisper on Chinese, English, and mixed-language dictation.">
+  <meta name="keywords" content="Seed-ASR, Whisper comparison, Doubao ASR, best Chinese ASR, multilingual voice recognition, Whisper alternatives 2026">
+  <meta property="og:title" content="Seed-ASR 2.0 vs Whisper: Which Is Better?">
+  <meta property="og:description" content="Seed-ASR 2.0 vs Whisper — head-to-head on Chinese, English, and mixed dictation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.echovoice.me/blog/seed-asr-vs-whisper">
+  <link rel="canonical" href="https://www.echovoice.me/blog/seed-asr-vs-whisper">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Seed-ASR 2.0 vs Whisper: Voice Recognition Comparison","author":{"@type":"Person","name":"Xiang"},"datePublished":"2026-04-16","publisher":{"@type":"Organization","name":"Echo Voice","url":"https://www.echovoice.me"}}
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#d4d4d4;line-height:1.8}.container{max-width:720px;margin:0 auto;padding:40px 20px}header a{color:#888;text-decoration:none;font-size:14px}h1{font-size:30px;color:#fff;margin:20px 0 16px;line-height:1.3}.meta{color:#666;font-size:14px;margin-bottom:40px}h2{font-size:22px;color:#fff;margin:36px 0 16px}h3{font-size:18px;color:#fff;margin:24px 0 12px}p{margin-bottom:20px;font-size:17px}table{width:100%;border-collapse:collapse;margin:24px 0}th,td{padding:12px 16px;text-align:left;border-bottom:1px solid #333;font-size:15px}th{color:#fff;background:#141414;font-weight:600}td{color:#d4d4d4}.winner{color:#22c55e;font-weight:600}.highlight{background:#1a1a2e;border-left:4px solid #4ecdc4;padding:20px;border-radius:8px;margin:24px 0}ul{margin:16px 0 20px 24px}li{margin-bottom:8px}.cta{background:linear-gradient(135deg,#4ecdc4,#6366f1);color:#fff;text-decoration:none;padding:16px 32px;border-radius:12px;display:inline-block;font-weight:600;margin:24px 0}footer{text-align:center;margin-top:60px;color:#666;font-size:14px;border-top:1px solid #222;padding-top:24px}footer a{color:#888;text-decoration:none}strong{color:#fff}code{background:#1a1a1a;padding:2px 6px;border-radius:4px;font-size:14px;color:#4ecdc4}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header><a href="/blog/">← Echo Blog</a></header>
+
+    <h1>Seed-ASR 2.0 vs Whisper: Which Wins for Voice Input?</h1>
+    <p class="meta">By Xiang · April 16, 2026 · 6 min read</p>
+
+    <p>When I was choosing an ASR engine for Echo, I spent two weeks benchmarking. Whisper is the default choice for most indie voice apps. But there's a newer contender from ByteDance that deserves attention: <strong>Seed-ASR 2.0</strong> (marketed as "Doubao").</p>
+
+    <p>Here's what I found.</p>
+
+    <h2>The Headline Numbers</h2>
+
+    <table>
+      <tr><th>Metric</th><th>Whisper Large-v3</th><th>Seed-ASR 2.0</th></tr>
+      <tr><td>Parameters</td><td>1.55B</td><td>~Not disclosed (MoE)</td></tr>
+      <tr><td>Languages</td><td>99 languages</td><td>13 languages + dialects</td></tr>
+      <tr><td>Chinese WER (AIShell)</td><td>~5.5%</td><td class="winner"><strong>~3.2%</strong></td></tr>
+      <tr><td>English WER (LibriSpeech)</td><td class="winner"><strong>~3.0%</strong></td><td>~3.5%</td></tr>
+      <tr><td>Mixed CN-EN</td><td>Decent</td><td class="winner">Excellent</td></tr>
+      <tr><td>Streaming (live)</td><td>❌ Batch only</td><td class="winner">✅ 300-400ms first partial</td></tr>
+      <tr><td>Context/keywords</td><td>Generic</td><td class="winner">+20% keyword recall (hot words API)</td></tr>
+      <tr><td>Open source</td><td class="winner">✅ Yes</td><td>❌ API only</td></tr>
+      <tr><td>Pricing</td><td>~$0.006/min (OpenAI API)</td><td class="winner">~$0.013/hour (Volcano)</td></tr>
+      <tr><td>Can run on-device</td><td class="winner">✅ Yes (500MB Small)</td><td>❌ Cloud only</td></tr>
+    </table>
+
+    <h2>Where Seed-ASR 2.0 Wins</h2>
+
+    <h3>1. Chinese Accuracy</h3>
+    <p>This is the biggest gap. Whisper was trained on internet-scraped audio with heavy English bias. Seed-ASR was trained by ByteDance — the company behind Douyin (Chinese TikTok) — with massive native Chinese speech data. For Mandarin, Cantonese, and regional dialects (Sichuan, Shanghainese), Seed wins decisively.</p>
+
+    <h3>2. Streaming Latency</h3>
+    <p>Whisper is a batch model. It was never designed for real-time transcription — you send an audio chunk, you get a result. For live voice input, this means you wait 500ms-2s after you stop speaking before seeing text.</p>
+
+    <p>Seed-ASR has a dedicated streaming mode (<code>volc.seedasr.sauc.duration</code>) with ~300-400ms first-character latency. Text appears as you speak, like captions. For voice input UX, this is a completely different feel.</p>
+
+    <h3>3. Mixed-Language Code-Switching</h3>
+    <p>When I say <em>"帮我发个 email 给 team"</em>, Whisper often transcribes the English words phonetically in Chinese characters (发个伊妹儿给替姆). Seed-ASR preserves English words as English. For bilingual users, this alone is a dealbreaker.</p>
+
+    <h3>4. Pricing</h3>
+    <p>OpenAI charges $0.006 per minute for Whisper API (~$0.36/hour). Volcano charges about ~$0.013/hour for Seed-ASR 2.0 — <strong>~27x cheaper per hour</strong>. This matters if you're running a voice app at scale.</p>
+
+    <h2>Where Whisper Wins</h2>
+
+    <h3>1. English Accuracy</h3>
+    <p>For clean English speech, Whisper Large-v3 still edges out Seed-ASR 2.0 slightly. Not by much, but if your users are 100% English, Whisper is a safe choice.</p>
+
+    <h3>2. Language Breadth</h3>
+    <p>Whisper handles 99 languages. Seed-ASR supports 13. If you need Arabic, Hindi, or Swahili, Whisper is your only option.</p>
+
+    <h3>3. Open Source</h3>
+    <p>Whisper models are downloadable and MIT-licensed. You can run them on-device via CoreML (Small = 500MB) or your own servers. Seed-ASR is API-only.</p>
+
+    <h3>4. Offline Capability</h3>
+    <p>If you need offline voice recognition (privacy-sensitive apps, field work, flights), Whisper runs locally. Seed-ASR requires a network connection.</p>
+
+    <h2>Why Echo Uses Seed-ASR 2.0 (with BigASR fallback)</h2>
+
+    <p>Our users are heavily Chinese-English bilingual. Streaming UX is a first-class priority (text should appear as you speak). Cost matters because we offer a free tier.</p>
+
+    <p>Seed-ASR 2.0 wins on all three axes for our audience.</p>
+
+    <p>That said, we keep BigASR 1.0 as an admin-toggleable fallback for A/B testing, and Whisper remains on the roadmap for an <strong>on-device fallback</strong> that Pro users can enable for offline privacy.</p>
+
+    <div class="highlight">
+      <p><strong>Our current architecture:</strong></p>
+      <ul>
+        <li>Primary (default): Seed-ASR 2.0 via Volcano cloud</li>
+        <li>Stream mode: <code>volc.seedasr.sauc.duration</code> — 300ms partial</li>
+        <li>Batch mode: <code>volc.seedasr.auc</code> — high-accuracy submit/query</li>
+        <li>Fallback: BigASR 1.0 (admin toggle)</li>
+        <li>Future: Whisper Small CoreML (on-device for Pro)</li>
+      </ul>
+    </div>
+
+    <h2>The Honest Verdict</h2>
+
+    <p>If you're building a voice app and need to pick one ASR today:</p>
+
+    <ul>
+      <li><strong>Primary audience is English-only + on-device:</strong> Whisper Small via CoreML</li>
+      <li><strong>Primary audience is Chinese / bilingual:</strong> Seed-ASR 2.0</li>
+      <li><strong>Need exotic languages:</strong> Whisper Large</li>
+      <li><strong>Need streaming UX:</strong> Seed-ASR (or Deepgram, Azure)</li>
+      <li><strong>Need lowest API cost:</strong> Seed-ASR</li>
+    </ul>
+
+    <p>Whisper is still the gold standard for accuracy on clean English. Seed-ASR wins on every dimension that matters for real-world multilingual voice input apps in 2026.</p>
+
+    <h2>Try Echo</h2>
+
+    <p>Curious how Seed-ASR feels in practice? Echo uses it by default. Free to download.</p>
+
+    <a href="https://apps.apple.com/app/id6758864952" class="cta">Download Echo (iOS) →</a>
+
+    <p style="margin-top:24px">Questions? DM me on <a href="https://x.com/EchoVoiceApp" style="color:#4ecdc4">X @EchoVoiceApp</a>.</p>
+
+    <p style="color:#888;font-style:italic">— Xiang, solo maker of Echo</p>
+
+    <footer>
+      <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="https://x.com/EchoVoiceApp">Twitter</a>
+    </footer>
+  </div>
+</body>
+</html>
