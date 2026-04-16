@@ -7,7 +7,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.echovoice.me/en" />
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/en</loc>
@@ -15,114 +15,114 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.echovoice.me/" />
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/download</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/features</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
-    <loc>https://www.echovoice.me/blog/</loc>
+    <loc>https://www.echovoice.me/blog</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/voice-typing-vs-keyboard-speed</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/best-voice-to-text-apps-2026</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/building-app-with-ai-partner</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/chinese-english-voice-input</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/echo-vs-apple-dictation</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/echo-vs-wispr-flow</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/echo-vs-superwhisper</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/apple-dictation-alternatives-2026</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/how-to-setup-echo-voice-keyboard</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/voice-typing-for-emails</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/blog/voice-typing-productivity-tips</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/about</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/support</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/privacy</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://www.echovoice.me/terms</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
-    <lastmod>2026-04-04</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
 </urlset>
