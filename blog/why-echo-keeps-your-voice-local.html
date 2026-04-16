@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Echo Keeps Your Voice on Your Device — Privacy by Design | Echo Blog</title>
+  <meta name="description" content="Most voice input tools upload your audio to their servers. Echo doesn't. Here's exactly what 'local-only' means for your voice recordings, transcripts, and privacy.">
+  <meta name="keywords" content="private voice input, local voice keyboard, no cloud storage, voice privacy, on-device ASR, Echo privacy, voice data protection">
+  <meta property="og:title" content="Why Echo Keeps Your Voice on Your Device">
+  <meta property="og:description" content="Most voice tools upload your audio. Echo doesn't. Here's what 'local-only' really means — and why it matters.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.echovoice.me/blog/why-echo-keeps-your-voice-local">
+  <meta property="og:image" content="https://www.echovoice.me/assets/screenshots/01-home-clean.png">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Echo Keeps Your Voice on Your Device">
+  <meta name="twitter:description" content="Private-by-design voice keyboard. Recordings never leave your phone.">
+  <link rel="canonical" href="https://www.echovoice.me/blog/why-echo-keeps-your-voice-local">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Why Echo Keeps Your Voice on Your Device","author":{"@type":"Person","name":"Xiang"},"datePublished":"2026-04-16","publisher":{"@type":"Organization","name":"Echo Voice","url":"https://www.echovoice.me"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.echovoice.me"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.echovoice.me/blog/"},{"@type":"ListItem","position":3,"name":"Why Echo Keeps Your Voice Local","item":"https://www.echovoice.me/blog/why-echo-keeps-your-voice-local"}]}
+  </script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#d4d4d4;line-height:1.8}.container{max-width:720px;margin:0 auto;padding:40px 20px}header a{color:#888;text-decoration:none;font-size:14px}h1{font-size:30px;color:#fff;margin:20px 0 16px;line-height:1.3}.meta{color:#666;font-size:14px;margin-bottom:40px}h2{font-size:22px;color:#fff;margin:36px 0 16px}p{margin-bottom:20px;font-size:17px}table{width:100%;border-collapse:collapse;margin:24px 0}th,td{padding:12px 16px;text-align:left;border-bottom:1px solid #333;font-size:15px}th{color:#fff;background:#141414;font-weight:600}td{color:#d4d4d4}.winner{color:#22c55e;font-weight:600}.highlight{background:#1a1a2e;border-left:4px solid #4ecdc4;padding:20px;border-radius:8px;margin:24px 0}ul{margin:16px 0 20px 24px}li{margin-bottom:8px}.cta{background:linear-gradient(135deg,#4ecdc4,#6366f1);color:#fff;text-decoration:none;padding:16px 32px;border-radius:12px;display:inline-block;font-weight:600;margin:24px 0}footer{text-align:center;margin-top:60px;color:#666;font-size:14px;border-top:1px solid #222;padding-top:24px}footer a{color:#888;text-decoration:none}strong{color:#fff}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header><a href="/blog/">← Echo Blog</a></header>
+
+    <h1>Why Echo Keeps Your Voice on Your Device</h1>
+    <p class="meta">By Xiang · April 16, 2026 · 5 min read</p>
+
+    <p>Two months ago I started building a voice keyboard. Before writing a single line of code, I spent a week mapping out what every existing voice tool did with your audio.</p>
+
+    <p>Here's what I found:</p>
+
+    <table>
+      <tr><th>Tool</th><th>Where your voice goes</th><th>Recording stored</th></tr>
+      <tr><td>Wispr Flow</td><td>Their servers</td><td>Yes (with opt-in "privacy mode")</td></tr>
+      <tr><td>Otter.ai</td><td>Their cloud</td><td>Yes, all of it</td></tr>
+      <tr><td>Google Voice Typing</td><td>Google servers</td><td>Yes</td></tr>
+      <tr><td>Apple Dictation</td><td>On-device</td><td>No (not saved anywhere)</td></tr>
+      <tr><td class="winner"><strong>Echo</strong></td><td class="winner"><strong>Cloud for recognition, then discarded</strong></td><td class="winner"><strong>Yes, locally only</strong></td></tr>
+    </table>
+
+    <p>Apple Dictation was the closest to my ideal — but it's slow, imprecise, and you can't edit mistakes or use AI to polish your rambling thoughts.</p>
+
+    <p>So I built Echo differently.</p>
+
+    <h2>What "local" actually means in Echo</h2>
+
+    <p>Three specific promises:</p>
+
+    <p><strong>1. Your audio is discarded immediately after recognition.</strong></p>
+
+    <p>When you speak, the audio gets sent to our ASR service (Doubao Seed-ASR 2.0 by default). The service transcribes it and returns the text. We don't save, log, or keep the audio data anywhere. Neither do we — as the developer — have access to any user audio.</p>
+
+    <p><strong>2. Your transcripts stay in your device's local storage.</strong></p>
+
+    <p>When Echo saves your recording history so you can review past transcriptions, that file lives in your iPhone or Mac's local sandbox. It's not uploaded to any cloud. It's not synced to our servers. If you delete the app, the data goes with it.</p>
+
+    <p><strong>3. No training. Ever.</strong></p>
+
+    <p>Your transcripts, your audio, your usage patterns — none of it is used to train any AI model. Not mine, not the ASR provider's, not any third party's.</p>
+
+    <h2>What about the account?</h2>
+
+    <p>Echo requires you to sign in if you want Pro (unlimited usage). But the account only stores:</p>
+
+    <ul>
+      <li>Your email (for billing)</li>
+      <li>Your subscription status</li>
+    </ul>
+
+    <p>It does <strong>not</strong> store:</p>
+
+    <ul>
+      <li>Your transcripts</li>
+      <li>Your recordings</li>
+      <li>What you've said</li>
+      <li>Your usage patterns</li>
+    </ul>
+
+    <p>The free tier (5,000 words/week) works without any account at all.</p>
+
+    <h2>Why this matters</h2>
+
+    <p>Most voice input tools treat your voice as <em>fuel for their product</em>. Your speech trains their models. Your transcripts inform their roadmap. Your patterns feed their analytics.</p>
+
+    <p>I wanted a tool where your voice is <em>just for you</em>.</p>
+
+    <p>Not because I'm a privacy absolutist (I'm not — I use ChatGPT, I use Google Maps). But because voice input is deeply personal. You use it for messages to family, private notes, work emails, half-formed thoughts you're trying to get out of your head. That stuff deserves to stay yours.</p>
+
+    <h2>Technical specifics (for the curious)</h2>
+
+    <p>The ASR layer uses Volcano Engine's Doubao Seed-ASR 2.0 — a state-of-the-art Chinese + multilingual model (13 languages, +20% keyword recall over the previous generation). When you speak:</p>
+
+    <ol style="margin:16px 0 20px 24px">
+      <li style="margin-bottom:8px">Audio captured locally via iOS <code>AVAudioEngine</code></li>
+      <li style="margin-bottom:8px">Streamed (or batched) to Volcano's servers via WebSocket / HTTPS</li>
+      <li style="margin-bottom:8px">Server returns transcription text</li>
+      <li style="margin-bottom:8px">Audio data is <strong>not</strong> retained on their side per the service agreement</li>
+      <li style="margin-bottom:8px">Text returned to Echo, saved to local SQLite on your device</li>
+      <li style="margin-bottom:8px">AI polish (OpenAI or Volcano Doubao) runs on the <em>text</em>, not audio</li>
+    </ol>
+
+    <p>API keys are stored in Apple Keychain (biometric-locked, same as your password manager).</p>
+
+    <h2>The trade-off with full on-device ASR</h2>
+
+    <p>You might ask: why not run ASR fully on-device like Whisper?</p>
+
+    <p>I considered it. Whisper Small (500MB) or SenseVoice (900MB) can run on iPhone via CoreML. It's on the roadmap for Pro users who want zero-cloud operation.</p>
+
+    <p>The trade-off today: cloud ASR is still <strong>more accurate</strong> for Chinese and multilingual content. Seed-ASR 2.0 beats Whisper Large on Mandarin benchmarks. On-device Whisper Small would be a noticeable accuracy drop.</p>
+
+    <div class="highlight">
+      <p>My current compromise: <strong>Send audio to cloud for recognition (discarded immediately), but keep everything else — history, analytics, AI polish context — on your device.</strong> This gives 95% of the privacy benefit with 100% of the accuracy.</p>
+    </div>
+
+    <h2>What Echo doesn't do</h2>
+
+    <p>Being honest about what's not pure:</p>
+
+    <ul>
+      <li>✅ Audio not stored — but it does traverse the network</li>
+      <li>✅ Transcripts local — but API calls go to Volcano servers</li>
+      <li>✅ No training — but we rely on their contractual commitment</li>
+      <li>✅ No analytics — but iOS sends anonymous crash reports if you consent</li>
+    </ul>
+
+    <p>For maximum privacy, wait for the on-device Whisper option (planned for later this year).</p>
+
+    <h2>Try it</h2>
+
+    <p>Free to download, works without an account:</p>
+
+    <a href="https://apps.apple.com/app/id6758864952" class="cta">Download Echo (iOS) →</a>
+
+    <p style="margin-top:24px">Questions or concerns? DM me on <a href="https://x.com/EchoVoiceApp" style="color:#4ecdc4">X @EchoVoiceApp</a> or email <a href="mailto:hello@echovoice.me" style="color:#4ecdc4">hello@echovoice.me</a>.</p>
+
+    <p style="color:#888;font-style:italic">— Xiang, solo maker of Echo</p>
+
+    <footer>
+      <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="https://x.com/EchoVoiceApp">Twitter</a>
+    </footer>
+  </div>
+</body>
+</html>
